@@ -1,3 +1,4 @@
+package LinkedList;
 
 public class Linklist_Node {
 	Object data;
