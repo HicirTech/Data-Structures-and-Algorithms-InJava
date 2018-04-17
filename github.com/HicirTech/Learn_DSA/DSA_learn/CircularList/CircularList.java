@@ -1,20 +1,21 @@
 
-public class LinkedList {
-	Linklist_Node head;
-	
+public class CircularList {
+
+	CircularList_node head;
 	public void insert(Object data)
 	{
-		Linklist_Node temp = new Linklist_Node();
+		CircularList_node temp = new CircularList_node();
 		temp.data=data;
-		temp.next=null;
+		temp.next=this.head;
 		if(head==null)
 		{
 			head=temp;
+			head.next=head;
 		}
 		else
 		{
-			Linklist_Node n = head;
-			while(n.next!=null)
+			CircularList_node n = head;
+			while(n.next!=head)
 			{
 				n =n.next;
 			};
@@ -23,32 +24,32 @@ public class LinkedList {
 	}
 	public void show()
 	{
-		Linklist_Node temp = head;
+		CircularList_node temp = head;
 		do
 		{
 			System.out.println(temp.data);
 			temp=temp.next;
-		}while(temp!=null);
+		}while(temp!=head);
 		
 	}
 	public void insertAtStart(Object data)
 	{
-		Linklist_Node set = new Linklist_Node();
+		CircularList_node set = new CircularList_node();
 		set.data=data;
 		set.next=head;
 		head =set;		
 	}
 	public void insertAt(int index,Object data)
 	{
-		Linklist_Node temp = new Linklist_Node();
+		CircularList_node temp = new CircularList_node();
 		temp.data=data;
-		temp.next=null;
+		temp.next=head;
 		if(index==0)
 		{
 			this.insertAtStart(data);
 		}
 		else{
-		Linklist_Node n = head;
+		CircularList_node n = head;
 		for(int i=0;i<index-1;i++)
 		{
 			n = n.next;
@@ -64,7 +65,7 @@ public class LinkedList {
 			head=head.next;
 		}
 		else{
-		Linklist_Node temp = head;
+		CircularList_node temp = head;
 		for(int i=0;i<index-1;i++)
 		{
 			temp = temp.next;
@@ -73,4 +74,5 @@ public class LinkedList {
 		temp.next=temp.next.next;	
 		}
 	}
+
 }
