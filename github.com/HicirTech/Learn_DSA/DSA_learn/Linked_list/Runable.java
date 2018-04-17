@@ -10,7 +10,6 @@ public class Runable {
 		list.insert(15);
 		list.insertAtStart(100);
 		list.insertAt(0, 95);
-		
 		list.deleteAt(3);
 		list.show();
 	}

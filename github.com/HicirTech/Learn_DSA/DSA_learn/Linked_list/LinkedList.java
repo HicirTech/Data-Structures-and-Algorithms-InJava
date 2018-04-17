@@ -1,10 +1,10 @@
 
 public class LinkedList {
-	Node head;
+	Linklist_Node head;
 	
 	public void insert(Object data)
 	{
-		Node temp = new Node();
+		Linklist_Node temp = new Linklist_Node();
 		temp.data=data;
 		temp.next=null;
 		if(head==null)
@@ -13,7 +13,7 @@ public class LinkedList {
 		}
 		else
 		{
-			Node n = head;
+			Linklist_Node n = head;
 			while(n.next!=null)
 			{
 				n =n.next;
@@ -23,7 +23,7 @@ public class LinkedList {
 	}
 	public void show()
 	{
-		Node temp = head;
+		Linklist_Node temp = head;
 		do
 		{
 			System.out.println(temp.data);
@@ -33,14 +33,14 @@ public class LinkedList {
 	}
 	public void insertAtStart(Object data)
 	{
-		Node set = new Node();
+		Linklist_Node set = new Linklist_Node();
 		set.data=data;
 		set.next=head;
 		head =set;		
 	}
 	public void insertAt(int index,Object data)
 	{
-		Node temp = new Node();
+		Linklist_Node temp = new Linklist_Node();
 		temp.data=data;
 		temp.next=null;
 		if(index==0)
@@ -48,7 +48,7 @@ public class LinkedList {
 			this.insertAtStart(data);
 		}
 		else{
-		Node n = head;
+		Linklist_Node n = head;
 		for(int i=0;i<index-1;i++)
 		{
 			n = n.next;
@@ -65,7 +65,7 @@ public class LinkedList {
 			head=head.next;
 		}
 		else{
-		Node temp = head;
+		Linklist_Node temp = head;
 		for(int i=1;i<index-1;i++)
 		{
 			temp = temp.next;
