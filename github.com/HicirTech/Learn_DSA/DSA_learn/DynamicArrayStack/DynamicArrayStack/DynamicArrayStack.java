@@ -30,6 +30,7 @@ public class DynamicArrayStack {
 		{
 		Object temp;
 		temp =  this.datas[top-1];
+		resize();
 		top--;
 		return temp;
 		}
@@ -52,6 +53,18 @@ public class DynamicArrayStack {
 		datas=tempData;
 		//System.out.println(datas.length+"Enpanded!");
 
+	}
+	public void resize()
+	{
+		Object[] tempData = new Object[MaxSize-1];
+		
+		for(int index= 0;index<MaxSize-1;index++)
+		{
+			tempData[index]=datas[index];
+		}
+		this.MaxSize--;
+		datas=tempData;
+		
 	}
 	public  Object peek()
 	{

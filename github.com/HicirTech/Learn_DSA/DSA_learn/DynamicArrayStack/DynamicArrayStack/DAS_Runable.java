@@ -5,9 +5,12 @@ public class DAS_Runable {
 	{
 	DynamicArrayStack stacks = new DynamicArrayStack();
 	stacks.push(2);
-	stacks.push(3);
+	stacks.push(15);
 	System.out.println(stacks.Size());
-	System.out.println(stacks.peek());
+	stacks.show();
+
+	System.out.println(stacks.pop());
+	System.out.println(stacks.Size());
 	stacks.show();
 	}
 }
