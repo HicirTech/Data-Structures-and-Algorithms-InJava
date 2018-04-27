@@ -1,13 +1,14 @@
-package FlatArrayQueue;
+package CircularArrayQueue;
 
-public class FlatArrayQueue {//Head fix
+public class CircularArrayQueue {
+
 
 	Object[] datas;
 	int maxSize;
 	int size;
 	int front;
 	int rear;
-	FlatArrayQueue(int size)
+	CircularArrayQueue(int size)
 	{
 		this.maxSize=size;
 		front=0;
@@ -17,31 +18,34 @@ public class FlatArrayQueue {//Head fix
 	}
 	public void enQueue(int data)
 	{
-		if(size!=this.maxSize)
+		if(!this.isFull())
 		{
 		 datas[rear]=data;
-		 rear++;
+		 rear=(rear+1)%this.maxSize;
 		 size++;
-		}
-		 else
-		 {
-			 System.out.println("Full!");
-		 }
-	}
-	public Object deQueue()
-	{
-		if(this.size!=0)
-		{
-		Object temp=datas[front];
-		front++;
-		size--;
-		return temp;
 		}
 		else
 		{
-			System.out.println("Empty!");
-			return null;
+			System.out.println("Queue is full");
 		}
+	
+	}
+	public Object deQueue()
+	{	Object temp=datas[front];
+	
+		if(!this.isEmpty())
+		{
+	
+		front=(front+1)%this.maxSize;
+		size--;
+	
+		}
+		else
+		{
+			System.out.println("Queue is Empty");
+		}
+		return temp;
+		
 	}
 	public int getSize()
 	{
@@ -55,14 +59,14 @@ public class FlatArrayQueue {//Head fix
 	{
 		return size==this.maxSize;
 	}
+	
 	public void shwo()
 	{
 		for(int index=0;index!=size;index++)
 		{
 			if(datas[index]!=null)
-			System.out.print(datas[front+index]+" ");
+			System.out.print(datas[(front+index)%5]+" ");
 		}
 		System.out.println();
 	}
-	
 }
