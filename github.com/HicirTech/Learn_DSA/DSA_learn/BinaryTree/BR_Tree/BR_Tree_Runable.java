@@ -9,7 +9,6 @@ public class BR_Tree_Runable {
 		tree.PostOrderTravers_STACK(tree.getRoot());
 		System.out.println();
 		tree.postOrderRecursion(tree.getRoot());
-		//tree.preOrderRecursion(tree.getRoot());
-		//System.out.println(tree.getSize(tree.getRoot()));
+	
 	}
 }

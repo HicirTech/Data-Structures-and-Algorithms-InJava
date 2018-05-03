@@ -8,7 +8,7 @@ public class CircularArrayQueue {
 	int size;
 	int front;
 	int rear;
-	CircularArrayQueue(int size)
+	public CircularArrayQueue(int size)
 	{
 		this.maxSize=size;
 		front=0;

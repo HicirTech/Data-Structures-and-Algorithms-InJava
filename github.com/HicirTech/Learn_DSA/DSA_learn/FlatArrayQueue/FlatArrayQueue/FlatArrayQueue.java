@@ -7,7 +7,7 @@ public class FlatArrayQueue {//Head fix
 	int size;
 	int front;
 	int rear;
-	FlatArrayQueue(int size)
+	public FlatArrayQueue(int size)
 	{
 		this.maxSize=size;
 		front=0;

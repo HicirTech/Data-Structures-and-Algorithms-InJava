@@ -5,7 +5,7 @@ public class DynamicArrayStack {
 	Object[] datas;
 	int MaxSize;
 	int top;
-	DynamicArrayStack()
+	public DynamicArrayStack()
 	{
 		this.MaxSize=0;
 		this.datas=new Object[MaxSize];

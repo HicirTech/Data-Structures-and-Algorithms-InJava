@@ -1,35 +1,35 @@
-package BR_Tree;
+package BinaryTree_ver.Extends;
 
-public class BrNode {
+public class BrENode {
 
-	private BrNode leftChild;
-	private BrNode rightChild;
+	private BrENode leftChild;
+	private BrENode rightChild;
 	private Object data;
-	public BrNode()
+	BrENode()
 	{
 		this.data=this.leftChild=this.rightChild=null;		
 	}
 
-	public BrNode(Object data)
+	BrENode(Object data)
 	{
 		this.data=data;
 		this.leftChild=this.rightChild=null;
 	}
 
 
-	public BrNode getLeftChild() {
+	public BrENode getLeftChild() {
 		return leftChild;
 	}
 
-	public void setLeftChild(BrNode leftChild) {
+	public void setLeftChild(BrENode leftChild) {
 		this.leftChild = leftChild;
 	}
 
-	public BrNode getRightChild() {
+	public BrENode getRightChild() {
 		return rightChild;
 	}
 
-	public void setRightChild(BrNode rightChild) {
+	public void setRightChild(BrENode rightChild) {
 		this.rightChild = rightChild;
 	}
 

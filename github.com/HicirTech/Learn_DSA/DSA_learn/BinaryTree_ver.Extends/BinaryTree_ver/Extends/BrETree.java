@@ -1,18 +1,51 @@
-package BR_Tree;
+package BinaryTree_ver.Extends;
 
-import java.util.Stack;
+import java.util.*;
 
-public class BrTree {
-
-	private BrNode root;
+public class BrETree {
+	private BrENode root;
 	//private int left,right;
-	BrTree()
+	BrETree()
 	{
 		
-		this.root=new BrNode();
+		this.root=new BrENode();
 	}
+
+	public void reTreeByPreOrder(ArrayList<String> data)
+	{
+		reTreeByPreOrder(data.size(),data);
+		
+	}
+	private BrENode reTreeByPreOrder(int size,ArrayList<String> dataList)
+	{
+		if(dataList.size()==0)
+		{
+			return null;
+		}
 	
+		String data =dataList.get(0);
+		BrENode node;
+		int index = size - dataList.size();
+		
+		
+		if(data.equals("#"))
+		{
+			node = null;
+			dataList.remove(0);
+			return node;
+		}
+		node = new BrENode(data);
+		if(index == 0)
+		{
+			this.setRoot(node);
+		}
+		
+		dataList.remove(0);
+		node.setLeftChild(reTreeByPreOrder(size,dataList));
+		node.setRightChild(reTreeByPreOrder(size,dataList));
 	
+	return node;
+	}
 	public void CreateBRTree()
 	{
 		
@@ -29,18 +62,18 @@ public class BrTree {
 		 *		G
 		 */
 		this.root.setData(new String("A"));
-		this.root.setLeftChild(new BrNode("B"));
-		this.root.setRightChild(new BrNode("C"));
-		this.root.getLeftChild().setLeftChild(new BrNode("D"));
-		this.root.getLeftChild().setRightChild(new BrNode("E"));
-		this.root.getRightChild().setLeftChild(new BrNode("F"));
-		this.root.getLeftChild().getLeftChild().setLeftChild(new BrNode("G"));	
+		this.root.setLeftChild(new BrENode("B"));
+		this.root.setRightChild(new BrENode("C"));
+		this.root.getLeftChild().setLeftChild(new BrENode("D"));
+		this.root.getLeftChild().setRightChild(new BrENode("E"));
+		this.root.getRightChild().setLeftChild(new BrENode("F"));
+		this.root.getLeftChild().getLeftChild().setLeftChild(new BrENode("G"));	
 	}
 	public boolean isEmpty()
 	{
 		return (this.root==null);
 	}
-	public int getSize(BrNode tree)
+	public int getSize(BrENode tree)
 	{
 		if(tree==null)
 		{
@@ -51,7 +84,7 @@ public class BrTree {
 			return 1+getSize(tree.getLeftChild())+getSize(tree.getRightChild());
 		}
 	}
-	public int getHeight(BrNode tree)
+	public int getHeight(BrENode tree)
 	{
 		if(tree==null)
 		{
@@ -72,7 +105,7 @@ public class BrTree {
 		}
 		
 	}
-	public void PreOrderTravers_STACK(BrNode tree)//Stack way to do pre order
+	public void PreOrderTravers_STACK(BrENode tree)//Stack way to do pre order
 	{
 		if(tree==null)
 		{
@@ -80,11 +113,11 @@ public class BrTree {
 		}
 		else
 		{
-		Stack<BrNode> stack = new Stack<BrNode>();
+		Stack<BrENode> stack = new Stack<BrENode>();
 		stack.push(tree);
 		while(!stack.isEmpty())
 		{
-			BrNode node = stack.pop();//pop root
+			BrENode node = stack.pop();//pop root
 			//push child
 			
 			System.out.println(node.getData().toString());
@@ -101,7 +134,7 @@ public class BrTree {
 		}
 	}
 	}
-	public void preOrderRecursion(BrNode node)
+	public void preOrderRecursion(BrENode node)
 	{
 		if(node==null)
 		{
@@ -114,7 +147,7 @@ public class BrTree {
 			preOrderRecursion(node.getRightChild());
 		}
 	}
-	public void inOrderRecursion(BrNode node)
+	public void inOrderRecursion(BrENode node)
 	{
 		if(node==null)
 		{
@@ -127,7 +160,7 @@ public class BrTree {
 			inOrderRecursion(node.getRightChild());
 		}
 	}
-	public void postOrderRecursion(BrNode node)
+	public void postOrderRecursion(BrENode node)
 	{
 		if(node==null)
 		{
@@ -140,7 +173,7 @@ public class BrTree {
 			System.out.println(node.getData());
 		}
 	}
-	public void InOrderTravers_STACK(BrNode tree)
+	public void InOrderTravers_STACK(BrENode tree)
 	{
 	
 		/*
@@ -159,8 +192,8 @@ public class BrTree {
 		if (tree == null) {
             return;
         }
-        Stack<BrNode> stack = new Stack<BrNode>();
-        BrNode node = tree;
+        Stack<BrENode> stack = new Stack<BrENode>();
+        BrENode node = tree;
        
         while (node != null) //find the most left node
         {
@@ -185,10 +218,10 @@ public class BrTree {
             }
         }
 	}
-	public void PostOrderTravers_STACK(BrNode tree)
+	public void PostOrderTravers_STACK(BrENode tree)
 	{
 
-        Stack<BrNode> stack = new Stack<BrNode>();
+        Stack<BrENode> stack = new Stack<BrENode>();
           
         // Check for empty tree
         if (tree == null)
@@ -197,10 +230,10 @@ public class BrTree {
         }
         
         stack.push(tree);//push the root into the buttom of the stack;
-        BrNode preView = null;//make a preView node
+        BrENode preView = null;//make a preView node
         while (!stack.isEmpty()) //when stack is not empty
         {
-            BrNode current = stack.peek();  
+            BrENode current = stack.peek();  
             
             /* go down the tree in search of a leaf an if so process it 
             and pop stack otherwise move down */            
@@ -245,10 +278,10 @@ public class BrTree {
         }
   	}
 	
-	public BrNode getRoot() {
+	public BrENode getRoot() {
 		return root;
 	}
-	public void setRoot(BrNode root) {
+	public void setRoot(BrENode root) {
 		this.root = root;
 	}
 

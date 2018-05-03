@@ -5,7 +5,7 @@ public class ArrayStack {
 	Object[] datas;
 	final int MaxSize;
 	int top;
-	ArrayStack(int size)
+	public ArrayStack(int size)
 	{
 		this.MaxSize=size;
 		this.datas=new Object[MaxSize];
