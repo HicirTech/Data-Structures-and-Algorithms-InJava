@@ -1,3 +1,4 @@
+package DSA_A1_task_1_F;
 /**
  * In this class, I will simulate a user perform all five function in the task-1
  * @author Luo Zeting ID:16938158

@@ -1,3 +1,4 @@
+package DSA_A1_task_1_F;
 /**
  *For Criteria Task-1 a.interface 
  * @author Luo Zeting ID 16938158

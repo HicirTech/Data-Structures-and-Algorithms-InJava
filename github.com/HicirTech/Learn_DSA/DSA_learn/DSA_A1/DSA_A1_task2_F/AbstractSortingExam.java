@@ -1,3 +1,4 @@
+package DSA_A1_task2_F;
 /**
  * this is an Abstract class for Task2
  * 

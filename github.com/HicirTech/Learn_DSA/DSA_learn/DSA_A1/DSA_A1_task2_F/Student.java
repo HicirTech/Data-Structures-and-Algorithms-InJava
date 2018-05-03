@@ -1,3 +1,4 @@
+package DSA_A1_task2_F;
 /**
  * This is a student class fot Task requirement a Based on this class, a student
  * will have a First name, Last name, Uni-year,ID ,and program

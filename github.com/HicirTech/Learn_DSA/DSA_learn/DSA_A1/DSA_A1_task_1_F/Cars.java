@@ -1,3 +1,4 @@
+package DSA_A1_task_1_F;
 import java.time.LocalTime;
 
 /**

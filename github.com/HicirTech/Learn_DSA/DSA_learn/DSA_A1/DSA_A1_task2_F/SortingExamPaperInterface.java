@@ -1,3 +1,4 @@
+package DSA_A1_task2_F;
 /**
  * this is the interface for sorting paper
  * 
