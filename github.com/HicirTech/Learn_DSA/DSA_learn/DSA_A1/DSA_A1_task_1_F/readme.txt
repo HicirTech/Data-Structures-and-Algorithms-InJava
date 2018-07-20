@@ -1,1 +1,0 @@
-To test the task 1, when you run the program you will see a menu, follow the menu you can test all the functions. When you park your car, you can see your car No and your check in time, by use the car No, you can check your parking time.
