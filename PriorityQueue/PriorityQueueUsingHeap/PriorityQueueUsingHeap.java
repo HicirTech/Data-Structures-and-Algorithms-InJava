@@ -20,7 +20,7 @@ public class PriorityQueueUsingHeap<T extends Comparable<T>> {
 
     public T delMax(){
         if (isEmpty()) return null;
-        T t= arr[1];
+        T t= arr[arr.length];
         exch(1,N--);
         arr[N+1] = null;
         sink(1);
